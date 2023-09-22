@@ -24,4 +24,11 @@ Both lecture series are taken from a [more complete set of
 lectures](https://python.quantecon.org) on open source computing hosted by
 [QuantEcon](https://quantecon.org).
 
+## Overview of ordinary differential equations (ODEs)
+- linear -> superposition
+- nonlinear -> cannot solve
+- constant coefficients are nice.
 
+## First order linear ODEs
+- general form: $\frac{dy}{dt} = ay + q(t)$ or $\frac{dy}{dt} = p(t)y + q(t)$
+- $\frac{dy}{dt}$ means rate of change.

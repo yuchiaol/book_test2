@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Scientific Python QuickStart wow!!! ODE is cool!!! Linear Algebra is also cool!!! &#8212; Scientific Python QuickStart</title>
+    <title>Week1 - overview of ODEs &#8212; Scientific Python QuickStart</title>
   
   
   
@@ -62,10 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/index';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/week1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week1 - overview of ODEs" href="week1.html" />
+    <link rel="next" title="About Python" href="about_py.html" />
+    <link rel="prev" title="Scientific Python QuickStart wow!!! ODE is cool!!! Linear Algebra is also cool!!!" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -140,7 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -157,8 +160,8 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="week1.html">Week1 - overview of ODEs</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week1 - overview of ODEs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_py.html">About Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Setting up Your Python Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_by_example.html">An Introductory Example</a></li>
@@ -217,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/docs/index.md" target="_blank"
+      <li><a href="../_sources/docs/week1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +289,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -297,11 +302,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Scientific Python QuickStart wow!!! ODE is cool!!! Linear Algebra is also cool!!!</h1>
+    <h1>Week1 - overview of ODEs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-ordinary-differential-equations-odes">Overview of ordinary differential equations (ODEs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-linear-odes">First order linear ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-linear-odes">Second order linear ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-of-n-equations">System of <span class="math notranslate nohighlight">\(n\)</span> equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solutions">Numerical solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-differential-euqations-pdes">Partial differential euqations (PDEs)</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -311,30 +329,53 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="scientific-python-quickstart-wow-ode-is-cool-linear-algebra-is-also-cool">
-<h1>Scientific Python QuickStart wow!!! ODE is cool!!! Linear Algebra is also cool!!!<a class="headerlink" href="#scientific-python-quickstart-wow-ode-is-cool-linear-algebra-is-also-cool" title="Permalink to this heading">#</a></h1>
-<p>This is a short sequence of lectures on Python programming for scientific
-work, written by <a class="reference external" href="http://www.tomsargent.com/">Thomas J.  Sargent</a> and <a class="reference external" href="https://johnstachurski.net/">John
-Stachurski</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These lectures were built using the new Sphinx-based <a class="reference external" href="https://beta.jupyterbook.org/intro.html">Jupyter Book
-2.0</a> tool set, as part of the
-<a class="reference external" href="https://ebp.jupyterbook.org/en/latest/">ExecutableBookProject</a>.  They are
-intended mainly as a demonstration of these tools.
-Instructions for how to build them from source can be found in the Jupyter
-Book documentation.</p>
-</div>
-<p>These lectures are a mini-version of a <a class="reference external" href="https://executablebooks.github.io/quantecon-example/docs/index.html">longer
-series</a>
-of lectures, also built using Jupyter Book 2.0.  That series contains more
-features and applications but also requires more libraries and takes longer to
-run.</p>
-<p>Both lecture series are taken from a <a class="reference external" href="https://python.quantecon.org">more complete set of
-lectures</a> on open source computing hosted by
-<a class="reference external" href="https://quantecon.org">QuantEcon</a>.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="week1-overview-of-odes">
+<span id="week1"></span><h1>Week1 - overview of ODEs<a class="headerlink" href="#week1-overview-of-odes" title="Permalink to this heading">#</a></h1>
+<section id="overview-of-ordinary-differential-equations-odes">
+<h2>Overview of ordinary differential equations (ODEs)<a class="headerlink" href="#overview-of-ordinary-differential-equations-odes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>linear -&gt; superposition</p></li>
+<li><p>nonlinear -&gt; cannot solve</p></li>
+<li><p>constant coefficients are nice.</p></li>
+</ul>
+</section>
+<section id="first-order-linear-odes">
+<h2>First order linear ODEs<a class="headerlink" href="#first-order-linear-odes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>general form: <span class="math notranslate nohighlight">\(\frac{dy}{dt} = ay + q(t)\)</span> or <span class="math notranslate nohighlight">\(\frac{dy}{dt} = p(t)y + q(t)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{dy}{dt}\)</span> means rate of change.</p></li>
+</ul>
+</section>
+<section id="second-order-linear-odes">
+<h2>Second order linear ODEs<a class="headerlink" href="#second-order-linear-odes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d^{2}y}{dt^{2}} = -ky\)</span>, <span class="math notranslate nohighlight">\(\frac{d^{2}y}{dt^{2}}\)</span> indicates acceleration or curvature.</p></li>
+<li><p><span class="math notranslate nohighlight">\(my^{''}+by^{'}+ky=f(t)\)</span>, where <span class="math notranslate nohighlight">\(by^{'}\)</span> implies dampling.</p></li>
+</ul>
+</section>
+<section id="system-of-n-equations">
+<h2>System of <span class="math notranslate nohighlight">\(n\)</span> equations<a class="headerlink" href="#system-of-n-equations" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d\vec{y}}{dt}=A\vec{y}\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is a <span class="math notranslate nohighlight">\(n\times n\)</span> matrix</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d^{2}\vec{y}}{dt^{2}}=-S\vec{y}\)</span></p></li>
+</ul>
+</section>
+<section id="numerical-solutions">
+<h2>Numerical solutions<a class="headerlink" href="#numerical-solutions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>MATLAB ode45</p></li>
+<li><p>neural network to solve ODEs</p></li>
+<li><p>ChatGPT to solve ODEs (BE CAREFULL!)</p></li>
+</ul>
+</section>
+<section id="partial-differential-euqations-pdes">
+<h2>Partial differential euqations (PDEs)<a class="headerlink" href="#partial-differential-euqations-pdes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>heat equation: <span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}\)</span></p></li>
+<li><p>wave equation: <span class="math notranslate nohighlight">\(\frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}\)</span></p></li>
+<li><p>Laplace equation: <span class="math notranslate nohighlight">\(\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}=0\)</span></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -367,12 +408,21 @@ lectures</a> on open source computing hosted by
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scientific Python QuickStart wow!!! ODE is cool!!! Linear Algebra is also cool!!!</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="week1.html"
+       href="about_py.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week1 - overview of ODEs</p>
+        <p class="prev-next-title">About Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -382,6 +432,25 @@ lectures</a> on open source computing hosted by
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-ordinary-differential-equations-odes">Overview of ordinary differential equations (ODEs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-linear-odes">First order linear ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-linear-odes">Second order linear ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-of-n-equations">System of <span class="math notranslate nohighlight">\(n\)</span> equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solutions">Numerical solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-differential-euqations-pdes">Partial differential euqations (PDEs)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -1,4 +1,4 @@
-# Scientific Python QuickStart wow!!! ODE is cool!!!
+# Scientific Python QuickStart wow!!! ODE is cool!!! Linear Algebra is also cool!!!
 
 This is a short sequence of lectures on Python programming for scientific
 work, written by [Thomas J.  Sargent](http://www.tomsargent.com/) and [John
